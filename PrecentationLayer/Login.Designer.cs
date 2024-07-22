@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pbShowHide = new System.Windows.Forms.PictureBox();
             this.cbRememberMe = new System.Windows.Forms.CheckBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.btnClose = new PrecentationLayer.PrimaryButton();
+            this.btnLogin = new PrecentationLayer.PrimaryButton();
             this.txtUsername = new PrecentationLayer.Lib.PrimaryTextBox();
             this.txtPassword = new PrecentationLayer.Lib.PrimaryTextBox();
-            this.btnLogin = new PrecentationLayer.PrimaryButton();
-            this.btnClose = new PrecentationLayer.PrimaryButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbShowHide)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,68 +86,85 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Password";
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 25;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BorderRadius = 20;
+            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.Black;
+            this.btnClose.Location = new System.Drawing.Point(277, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(79, 47);
+            this.btnClose.TabIndex = 20;
+            this.btnClose.Text = "Close ❌";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BorderRadius = 10;
+            this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnLogin.ForeColor = System.Drawing.Color.Black;
+            this.btnLogin.Location = new System.Drawing.Point(134, 285);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(140, 52);
+            this.btnLogin.TabIndex = 19;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtUsername.Location = new System.Drawing.Point(105, 89);
             this.txtUsername.Mode = PrecentationLayer.Lib.PrimaryTextBox.enMode.Show;
             this.txtUsername.Name = "txtUsername";
+            this.txtUsername.OnlyNumbers = false;
             this.txtUsername.Size = new System.Drawing.Size(208, 20);
             this.txtUsername.TabIndex = 14;
             this.txtUsername.Tag = "Hide";
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtPassword.Location = new System.Drawing.Point(105, 168);
             this.txtPassword.Mode = PrecentationLayer.Lib.PrimaryTextBox.enMode.Hide;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.OnlyNumbers = false;
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(208, 20);
             this.txtPassword.TabIndex = 13;
             this.txtPassword.Tag = "Show";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(124, 269);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(140, 52);
-            this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(277, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(79, 35);
-            this.btnClose.TabIndex = 17;
-            this.btnClose.Text = "Close ❌";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // Login
             // 
-            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(368, 450);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cbRememberMe);
             this.Controls.Add(this.pbShowHide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -163,12 +182,13 @@
 
         private System.Windows.Forms.PictureBox pbShowHide;
         private System.Windows.Forms.CheckBox cbRememberMe;
-        private PrimaryButton btnLogin;
         private Lib.PrimaryTextBox txtPassword;
         private Lib.PrimaryTextBox txtUsername;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private PrimaryButton btnClose;
+        private PrimaryButton btnLogin;
     }
 }
 

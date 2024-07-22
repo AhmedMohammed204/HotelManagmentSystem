@@ -1,4 +1,5 @@
-﻿using PeopleBusinessLayer;
+﻿using Guna.UI2.WinForms;
+using PeopleBusinessLayer;
 using System;
 using System.Windows.Forms;
 using UtilLibrary;
@@ -12,7 +13,7 @@ namespace PrecentationLayer.Lib
             InitializeComponent();
             UpdateButton = btnUpdate;
         }
-        public Button UpdateButton { get; set; }
+        public Guna2Button UpdateButton { get; set; }
         public clsPerson PersonInfo { get; set; }
         public void LoadInfo(int PersonID)
         {

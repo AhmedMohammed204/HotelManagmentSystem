@@ -10,8 +10,7 @@ namespace PrecentationLayer
         {
             Title = "Hi";
             InitializeComponent();
-
-            ctrlDataGridWithSearch1.LoadData(clsRoom.GetAvailableRooms());
+          
         }
     }
 }

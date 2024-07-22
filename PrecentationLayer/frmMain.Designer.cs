@@ -28,82 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pMain = new System.Windows.Forms.Panel();
-            this.btnManagePeople = new PrecentationLayer.PrimaryButton();
-            this.btnSettings = new PrecentationLayer.PrimaryButton();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pMain.SuspendLayout();
+            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.SuspendLayout();
-            // 
-            // pMain
-            // 
-            this.pMain.Controls.Add(this.btnManagePeople);
-            this.pMain.Controls.Add(this.btnSettings);
-            this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pMain.Location = new System.Drawing.Point(0, 75);
-            this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(800, 375);
-            this.pMain.TabIndex = 0;
-            // 
-            // btnManagePeople
-            // 
-            this.btnManagePeople.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnManagePeople.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManagePeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnManagePeople.ForeColor = System.Drawing.Color.Black;
-            this.btnManagePeople.Location = new System.Drawing.Point(36, 165);
-            this.btnManagePeople.Name = "btnManagePeople";
-            this.btnManagePeople.Size = new System.Drawing.Size(174, 76);
-            this.btnManagePeople.TabIndex = 2;
-            this.btnManagePeople.Text = "Manage People";
-            this.btnManagePeople.UseVisualStyleBackColor = false;
-            this.btnManagePeople.Click += new System.EventHandler(this.btnManagePeople_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Location = new System.Drawing.Point(36, 52);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(174, 76);
-            this.btnSettings.TabIndex = 1;
-            this.btnSettings.Text = "Current User Settings";
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // lblTitle
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(800, 75);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Stegi Hotel";
+            this.lblTitle.Size = new System.Drawing.Size(948, 69);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Hotel Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2ContextMenuStrip1
+            // 
+            this.guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
+            this.guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pMain);
+            this.ClientSize = new System.Drawing.Size(948, 488);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
-            this.pMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pMain;
         private System.Windows.Forms.Label lblTitle;
-        private PrimaryButton btnSettings;
-        private PrimaryButton btnManagePeople;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
     }
 }

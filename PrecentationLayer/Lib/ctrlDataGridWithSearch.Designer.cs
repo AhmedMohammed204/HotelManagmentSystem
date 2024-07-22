@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pBottom = new System.Windows.Forms.Panel();
-            this.pTop = new System.Windows.Forms.Panel();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbFillters = new System.Windows.Forms.ComboBox();
+            this.pTop = new System.Windows.Forms.Panel();
             this.txtSearch = new PrecentationLayer.Lib.PrimaryTextBox();
+            this.cbFillters = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pBottom.SuspendLayout();
-            this.pTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.pTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pBottom
@@ -47,18 +47,6 @@
             this.pBottom.Name = "pBottom";
             this.pBottom.Size = new System.Drawing.Size(606, 221);
             this.pBottom.TabIndex = 0;
-            // 
-            // pTop
-            // 
-            this.pTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pTop.Controls.Add(this.txtSearch);
-            this.pTop.Controls.Add(this.cbFillters);
-            this.pTop.Controls.Add(this.label1);
-            this.pTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pTop.Location = new System.Drawing.Point(0, 0);
-            this.pTop.Name = "pTop";
-            this.pTop.Size = new System.Drawing.Size(606, 27);
-            this.pTop.TabIndex = 1;
             // 
             // dgvData
             // 
@@ -75,26 +63,17 @@
             this.dgvData.Size = new System.Drawing.Size(606, 221);
             this.dgvData.TabIndex = 0;
             // 
-            // label1
+            // pTop
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fillter By:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbFillters
-            // 
-            this.cbFillters.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbFillters.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFillters.FormattingEnabled = true;
-            this.cbFillters.Location = new System.Drawing.Point(145, 0);
-            this.cbFillters.Name = "cbFillters";
-            this.cbFillters.Size = new System.Drawing.Size(135, 26);
-            this.cbFillters.TabIndex = 1;
+            this.pTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pTop.Controls.Add(this.txtSearch);
+            this.pTop.Controls.Add(this.cbFillters);
+            this.pTop.Controls.Add(this.label1);
+            this.pTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pTop.Location = new System.Drawing.Point(0, 0);
+            this.pTop.Name = "pTop";
+            this.pTop.Size = new System.Drawing.Size(606, 27);
+            this.pTop.TabIndex = 1;
             // 
             // txtSearch
             // 
@@ -109,6 +88,27 @@
             this.txtSearch.Tag = "Hide";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // cbFillters
+            // 
+            this.cbFillters.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbFillters.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFillters.FormattingEnabled = true;
+            this.cbFillters.Location = new System.Drawing.Point(145, 0);
+            this.cbFillters.Name = "cbFillters";
+            this.cbFillters.Size = new System.Drawing.Size(135, 26);
+            this.cbFillters.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Fillter By:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ctrlDataGridWithSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,9 +118,9 @@
             this.Name = "ctrlDataGridWithSearch";
             this.Size = new System.Drawing.Size(606, 254);
             this.pBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.pTop.ResumeLayout(false);
             this.pTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -37,7 +37,6 @@
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
             this.btnLogout.Location = new System.Drawing.Point(563, 196);
@@ -45,14 +44,12 @@
             this.btnLogout.Size = new System.Drawing.Size(216, 89);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnUserInfo
             // 
             this.btnUserInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnUserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnUserInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserInfo.ForeColor = System.Drawing.Color.Black;
             this.btnUserInfo.Location = new System.Drawing.Point(279, 196);
@@ -60,13 +57,11 @@
             this.btnUserInfo.Size = new System.Drawing.Size(216, 89);
             this.btnUserInfo.TabIndex = 4;
             this.btnUserInfo.Text = "Current User Info";
-            this.btnUserInfo.UseVisualStyleBackColor = false;
             this.btnUserInfo.Click += new System.EventHandler(this.btnUserInfo_Click);
             // 
             // txtUpdate
             // 
             this.txtUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUpdate.ForeColor = System.Drawing.Color.Black;
             this.txtUpdate.Location = new System.Drawing.Point(12, 196);
@@ -74,7 +69,6 @@
             this.txtUpdate.Size = new System.Drawing.Size(216, 89);
             this.txtUpdate.TabIndex = 5;
             this.txtUpdate.Text = "Update Info";
-            this.txtUpdate.UseVisualStyleBackColor = false;
             this.txtUpdate.Click += new System.EventHandler(this.txtUpdate_Click);
             // 
             // frmSettings
