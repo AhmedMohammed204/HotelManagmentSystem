@@ -42,8 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsCountry.cs" />
+    <Compile Include="clsFaciliti.cs" />
+    <Compile Include="clsFacility.cs" />
+    <Compile Include="clsHotelFacilities.cs" />
+    <Compile Include="clsHotelImage.cs" />
+    <Compile Include="clsHotle.cs" />
     <Compile Include="clsIdentificationType.cs" />
     <Compile Include="clsPerson.cs" />
+    <Compile Include="clsReservation.cs" />
+    <Compile Include="clsRoom.cs" />
+    <Compile Include="clsRoomImage.cs" />
+    <Compile Include="clsRoomType.cs" />
+    <Compile Include="clsRoomTypeFacility.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

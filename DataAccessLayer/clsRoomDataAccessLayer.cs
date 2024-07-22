@@ -1,7 +1,7 @@
+using MyClassLibrary;
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using MyClassLibrary;
 namespace StegiHotel_databaseDataAccessLayer
 {
     public static class clsRoomsDataAccess
@@ -50,7 +50,7 @@ namespace StegiHotel_databaseDataAccessLayer
             return isFound;
 
         }
-        public static int AddNewRoom(byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int TotalSingleBeds, int TotalDoubleBeds)
+        public static int AddNewRoom(byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int? TotalSingleBeds, int? TotalDoubleBeds)
         {
 
             int ID = -1;
@@ -106,7 +106,7 @@ namespace StegiHotel_databaseDataAccessLayer
         }
 
 
-        public static bool UpdateRoom(int RoomID, byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int TotalSingleBeds, int TotalDoubleBeds)
+        public static bool UpdateRoom(int RoomID, byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int? TotalSingleBeds, int? TotalDoubleBeds)
         {
             int rowsAffected = 0;
 

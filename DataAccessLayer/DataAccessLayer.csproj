@@ -43,8 +43,18 @@
   <ItemGroup>
     <Compile Include="clsCountryDataAccessLayer.cs" />
     <Compile Include="clsDataAccess.cs" />
+    <Compile Include="clsFacilitiDataAccessLayer.cs" />
+    <Compile Include="clsFacilityDataAccessLayer.cs" />
+    <Compile Include="clsHotelFacilitiesDataAccessLayer.cs" />
+    <Compile Include="clsHotelImageDataAccessLayer.cs" />
+    <Compile Include="clsHotleDataAccessLayer.cs" />
     <Compile Include="clsIdentificationTypeDataAccessLayer.cs" />
     <Compile Include="clsPersonDataAccessLayer.cs" />
+    <Compile Include="clsReservationDataAccessLayer.cs" />
+    <Compile Include="clsRoomDataAccessLayer.cs" />
+    <Compile Include="clsRoomImageDataAccessLayer.cs" />
+    <Compile Include="clsRoomTypeDataAccessLayer.cs" />
+    <Compile Include="clsRoomTypeFacilityDataAccessLayer.cs" />
     <Compile Include="clsUserDataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
