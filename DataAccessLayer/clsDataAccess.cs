@@ -2,6 +2,6 @@
 {
     internal static class clsDataAccessSettings
     {
-        public static string ConnectionString = "Data Source=DESKTOP-OB7FVAR\\SQLEXPRESS;Initial Catalog=StegiHotel_database;Integrated Security=True;";
+        public static string ConnectionString = "Server=.;Database=StegiHotel_Database;User Id=sa;Password=sa123456;";
     }
 }
