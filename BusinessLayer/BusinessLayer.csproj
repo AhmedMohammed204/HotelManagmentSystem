@@ -41,16 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsHotelFacility.cs" />
     <Compile Include="clsCountry.cs" />
-    <Compile Include="clsFaciliti.cs" />
-    <Compile Include="clsHotle.cs" />
     <Compile Include="clsIdentificationType.cs" />
     <Compile Include="clsPerson.cs" />
-    <Compile Include="clsReservation.cs" />
-    <Compile Include="clsRoom.cs" />
-    <Compile Include="clsRoomType.cs" />
-    <Compile Include="clsRoomTypeFacility.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
