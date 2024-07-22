@@ -45,6 +45,12 @@ namespace PrecentationLayer
             frmSettings frm = new frmSettings();
             frm.OnLogout += _Logout;
             frm.OnOpenCurrentUserInfo += _CurrentUserInfo;
+            frm.OnClickUpdateInfo += () =>
+            {
+                frmUpdateUser frm2 = new frmUpdateUser(clsGlobal.CurrentUser.UserID);
+                frm2.OnBack += _SettingsForm;
+                OpenFormInPanel.Open(frm2);
+            };
             frm.OnBack += _OpenMainScreen;
             OpenFormInPanel.Open(frm);
         }
@@ -92,6 +98,15 @@ namespace PrecentationLayer
         {
             _ManagePeopleScreen();
         }
+        #endregion
+
+        #region Users
+
+        void _UpdateUser(int UserID)
+        {
+
+        }
+
         #endregion
     }
 }

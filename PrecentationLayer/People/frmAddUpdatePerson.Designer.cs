@@ -33,11 +33,13 @@
             // 
             // ctrlUpdatePersonInfo1
             // 
-            this.ctrlUpdatePersonInfo1.Location = new System.Drawing.Point(27, 151);
+            this.ctrlUpdatePersonInfo1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlUpdatePersonInfo1.Location = new System.Drawing.Point(140, 162);
             this.ctrlUpdatePersonInfo1.Mode = PrecentationLayer.People.ctrlAddUpdatePersonInfo.enMode.AddNew;
             this.ctrlUpdatePersonInfo1.Name = "ctrlUpdatePersonInfo1";
             this.ctrlUpdatePersonInfo1.PersonInfo = null;
-            this.ctrlUpdatePersonInfo1.Size = new System.Drawing.Size(999, 412);
+            this.ctrlUpdatePersonInfo1.Size = new System.Drawing.Size(991, 412);
             this.ctrlUpdatePersonInfo1.TabIndex = 3;
             this.ctrlUpdatePersonInfo1.OnModeChanged += new System.Action<string>(this.ctrlUpdatePersonInfo1_OnModeChanged);
             // 
@@ -45,7 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 597);
+            this.ClientSize = new System.Drawing.Size(1284, 605);
             this.Controls.Add(this.ctrlUpdatePersonInfo1);
             this.Name = "frmAddUpdatePerson";
             this.Text = "frmUpdatePerson";

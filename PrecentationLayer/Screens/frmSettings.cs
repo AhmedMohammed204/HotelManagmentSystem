@@ -22,5 +22,11 @@ namespace PrecentationLayer.Screens
         {
             OnOpenCurrentUserInfo?.Invoke();
         }
+
+        public event Action OnClickUpdateInfo;
+        private void txtUpdate_Click(object sender, EventArgs e)
+        {
+            OnClickUpdateInfo?.Invoke();
+        }
     }
 }

@@ -10,8 +10,9 @@ namespace PrecentationLayer.Lib
         public ctrlPersonInfo()
         {
             InitializeComponent();
+            UpdateButton = btnUpdate;
         }
-
+        public Button UpdateButton { get; set; }
         public clsPerson PersonInfo { get; set; }
         public void LoadInfo(int PersonID)
         {

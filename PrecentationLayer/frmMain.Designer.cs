@@ -39,11 +39,10 @@
             // 
             this.pMain.Controls.Add(this.btnManagePeople);
             this.pMain.Controls.Add(this.btnSettings);
-            this.pMain.Controls.Add(this.lblTitle);
             this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pMain.Location = new System.Drawing.Point(0, 0);
+            this.pMain.Location = new System.Drawing.Point(0, 75);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(800, 450);
+            this.pMain.Size = new System.Drawing.Size(800, 375);
             this.pMain.TabIndex = 0;
             // 
             // btnManagePeople
@@ -52,7 +51,7 @@
             this.btnManagePeople.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagePeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnManagePeople.ForeColor = System.Drawing.Color.Black;
-            this.btnManagePeople.Location = new System.Drawing.Point(63, 282);
+            this.btnManagePeople.Location = new System.Drawing.Point(36, 165);
             this.btnManagePeople.Name = "btnManagePeople";
             this.btnManagePeople.Size = new System.Drawing.Size(174, 76);
             this.btnManagePeople.TabIndex = 2;
@@ -66,7 +65,7 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Location = new System.Drawing.Point(63, 169);
+            this.btnSettings.Location = new System.Drawing.Point(36, 52);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(174, 76);
             this.btnSettings.TabIndex = 1;
@@ -91,6 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pMain);
+            this.Controls.Add(this.lblTitle);
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);

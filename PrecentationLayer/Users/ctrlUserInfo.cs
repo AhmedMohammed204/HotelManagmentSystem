@@ -10,17 +10,20 @@ namespace PrecentationLayer.Lib
         public ctrlUserInfo()
         {
             InitializeComponent();
+            PersonInfo = ctrlPersonInfo1;
         }
         public clsUser UserInfo { get; set; }
-        public void LoadInfo(int UserID)
+        public ctrlPersonInfo PersonInfo { get; set; }
+        public bool LoadInfo(int UserID)
         {
             UserInfo = clsUser.Find(UserID);
             if (UserInfo == null)
             {
                 clsMessageBox.ErrorMessage("User not found");
-                return;
+                return false;
             }
             _FillUserDetails();
+            return true;
         }
 
         private void _FillUserDetails()

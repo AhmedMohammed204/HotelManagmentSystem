@@ -30,6 +30,7 @@
         {
             this.btnLogout = new PrecentationLayer.PrimaryButton();
             this.btnUserInfo = new PrecentationLayer.PrimaryButton();
+            this.txtUpdate = new PrecentationLayer.PrimaryButton();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -41,7 +42,7 @@
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
             this.btnLogout.Location = new System.Drawing.Point(563, 196);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(190, 75);
+            this.btnLogout.Size = new System.Drawing.Size(216, 89);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -62,17 +63,33 @@
             this.btnUserInfo.UseVisualStyleBackColor = false;
             this.btnUserInfo.Click += new System.EventHandler(this.btnUserInfo_Click);
             // 
+            // txtUpdate
+            // 
+            this.txtUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdate.ForeColor = System.Drawing.Color.Black;
+            this.txtUpdate.Location = new System.Drawing.Point(12, 196);
+            this.txtUpdate.Name = "txtUpdate";
+            this.txtUpdate.Size = new System.Drawing.Size(216, 89);
+            this.txtUpdate.TabIndex = 5;
+            this.txtUpdate.Text = "Update Info";
+            this.txtUpdate.UseVisualStyleBackColor = false;
+            this.txtUpdate.Click += new System.EventHandler(this.txtUpdate_Click);
+            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtUpdate);
             this.Controls.Add(this.btnUserInfo);
             this.Controls.Add(this.btnLogout);
             this.Name = "frmSettings";
             this.Text = "frmSettings";
             this.Controls.SetChildIndex(this.btnLogout, 0);
             this.Controls.SetChildIndex(this.btnUserInfo, 0);
+            this.Controls.SetChildIndex(this.txtUpdate, 0);
             this.ResumeLayout(false);
 
         }
@@ -81,5 +98,6 @@
 
         private PrimaryButton btnLogout;
         private PrimaryButton btnUserInfo;
+        private PrimaryButton txtUpdate;
     }
 }
