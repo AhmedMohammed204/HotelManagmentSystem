@@ -1,5 +1,6 @@
 ﻿using CountriesBusinessLayer;
 using PrecentationLayer.Screens;
+using RoomsBusinessLayer;
 
 namespace PrecentationLayer
 {
@@ -10,7 +11,7 @@ namespace PrecentationLayer
             Title = "Hi";
             InitializeComponent();
 
-            ctrlDataGridWithSearch1.LoadData(clsCountry.GetAllCountries());
+            ctrlDataGridWithSearch1.LoadData(clsRoom.GetAvailableRooms());
         }
     }
 }

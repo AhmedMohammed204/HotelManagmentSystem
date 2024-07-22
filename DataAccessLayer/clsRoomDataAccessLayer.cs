@@ -2,11 +2,12 @@ using MyClassLibrary;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace StegiHotel_databaseDataAccessLayer
 {
     public static class clsRoomsDataAccess
     {
-        public static bool GetRoomInfoByID(int RoomID, ref byte Capacity, ref bool AllowChildern, ref int fees, ref int HotleID, ref int RoomTypeID, ref int TotalSingleBeds, ref int TotalDoubleBeds)
+        public static bool GetRoomInfoByID(int RoomID, ref byte Capacity, ref bool AllowChildern, ref int fees, ref int HotleID, ref int RoomTypeID, ref int TotalSingleBeds, ref int TotalDoubleBeds, ref byte Floor)
         {
             bool isFound = false;
 
@@ -36,6 +37,7 @@ namespace StegiHotel_databaseDataAccessLayer
                                 RoomTypeID = (int)reader["RoomTypeID"];
                                 TotalSingleBeds = reader["TotalSingleBeds"] != DBNull.Value ? (int)reader["TotalSingleBeds"] : TotalSingleBeds = default;
                                 TotalDoubleBeds = reader["TotalDoubleBeds"] != DBNull.Value ? (int)reader["TotalDoubleBeds"] : TotalDoubleBeds = default;
+                                Floor = (byte)reader["Floor"];
 
                             }
                             else
@@ -50,7 +52,7 @@ namespace StegiHotel_databaseDataAccessLayer
             return isFound;
 
         }
-        public static int AddNewRoom(byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int? TotalSingleBeds, int? TotalDoubleBeds)
+        public static int AddNewRoom(byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int? TotalSingleBeds, int? TotalDoubleBeds, byte Floor)
         {
 
             int ID = -1;
@@ -59,7 +61,7 @@ namespace StegiHotel_databaseDataAccessLayer
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
 
-                    string query = @"INSERT INTO Rooms VALUES (@Capacity, @AllowChildern, @fees, @HotleID, @RoomTypeID, @TotalSingleBeds?, @TotalDoubleBeds?)
+                    string query = @"INSERT INTO Rooms VALUES (@Capacity, @AllowChildern, @fees, @HotleID, @RoomTypeID, @TotalSingleBeds?, @TotalDoubleBeds?, @Floor)
         SELECT SCOPE_IDENTITY()";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -84,6 +86,8 @@ namespace StegiHotel_databaseDataAccessLayer
                             command.Parameters.AddWithValue("@TotalDoubleBeds", DBNull.Value);
                         else
                             command.Parameters.AddWithValue("@TotalDoubleBeds", TotalDoubleBeds);
+                        command.Parameters.AddWithValue("@Floor", Floor);
+
 
 
 
@@ -106,7 +110,7 @@ namespace StegiHotel_databaseDataAccessLayer
         }
 
 
-        public static bool UpdateRoom(int RoomID, byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int? TotalSingleBeds, int? TotalDoubleBeds)
+        public static bool UpdateRoom(int RoomID, byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int ?TotalSingleBeds, int? TotalDoubleBeds, byte Floor)
         {
             int rowsAffected = 0;
 
@@ -122,7 +126,8 @@ namespace StegiHotel_databaseDataAccessLayer
 	HotleID = @HotleID,
 	RoomTypeID = @RoomTypeID,
 	TotalSingleBeds = @TotalSingleBeds,
-	TotalDoubleBeds = @TotalDoubleBeds	WHERE RoomID = @RoomID";
+	TotalDoubleBeds = @TotalDoubleBeds,
+	Floor = @Floor	WHERE RoomID = @RoomID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
@@ -147,6 +152,8 @@ namespace StegiHotel_databaseDataAccessLayer
                             command.Parameters.AddWithValue("@TotalDoubleBeds", DBNull.Value);
                         else
                             command.Parameters.AddWithValue("@TotalDoubleBeds", TotalDoubleBeds);
+                        command.Parameters.AddWithValue("@Floor", Floor);
+
 
                         connection.Open(); rowsAffected = command.ExecuteNonQuery();
                     }
@@ -220,6 +227,34 @@ namespace StegiHotel_databaseDataAccessLayer
                     string query = "SELECT * FROM Rooms";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                            reader.Close();
+                        }
+                    }
+                }
+            }
+
+            catch (Exception ex) { clsErrorHandling.HandleError(ex); }
+
+            return dt;
+        }
+
+        
+        public static DataTable GetAllAvailableRooms()
+        {
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("sp_GetAvailableRooms", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

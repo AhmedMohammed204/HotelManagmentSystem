@@ -1,5 +1,6 @@
-using StegiHotel_databaseDataAccessLayer;
+using System;
 using System.Data;
+using StegiHotel_databaseDataAccessLayer;
 namespace RoomsBusinessLayer
 {
 
@@ -15,6 +16,7 @@ namespace RoomsBusinessLayer
         public int RoomTypeID { get; set; }
         public int? TotalSingleBeds { get; set; }
         public int? TotalDoubleBeds { get; set; }
+        public byte Floor { get; set; }
 
 
         public clsRoom()
@@ -27,13 +29,14 @@ namespace RoomsBusinessLayer
             this.RoomTypeID = default;
             this.TotalSingleBeds = default;
             this.TotalDoubleBeds = default;
+            this.Floor = default;
 
 
             Mode = enMode.AddNew;
 
         }
 
-        private clsRoom(int RoomID, byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int TotalSingleBeds, int TotalDoubleBeds)
+        private clsRoom(int RoomID, byte Capacity, bool AllowChildern, int fees, int HotleID, int RoomTypeID, int TotalSingleBeds, int TotalDoubleBeds, byte Floor)
         {
             this.RoomID = RoomID;
             this.Capacity = Capacity;
@@ -43,6 +46,7 @@ namespace RoomsBusinessLayer
             this.RoomTypeID = RoomTypeID;
             this.TotalSingleBeds = TotalSingleBeds;
             this.TotalDoubleBeds = TotalDoubleBeds;
+            this.Floor = Floor;
 
 
             Mode = enMode.Update;
@@ -53,7 +57,7 @@ namespace RoomsBusinessLayer
         {
             //call DataAccess Layer 
 
-            this.RoomID = clsRoomsDataAccess.AddNewRoom(this.Capacity, this.AllowChildern, this.fees, this.HotleID, this.RoomTypeID, this.TotalSingleBeds, this.TotalDoubleBeds);
+            this.RoomID = clsRoomsDataAccess.AddNewRoom(this.Capacity, this.AllowChildern, this.fees, this.HotleID, this.RoomTypeID, this.TotalSingleBeds, this.TotalDoubleBeds , this.Floor);
 
             return (this.RoomID != -1);
 
@@ -63,7 +67,7 @@ namespace RoomsBusinessLayer
         {
             //call DataAccess Layer 
 
-            return clsRoomsDataAccess.UpdateRoom(this.RoomID, this.Capacity, this.AllowChildern, this.fees, this.HotleID, this.RoomTypeID, this.TotalSingleBeds, this.TotalDoubleBeds);
+            return clsRoomsDataAccess.UpdateRoom(this.RoomID, this.Capacity, this.AllowChildern, this.fees, this.HotleID, this.RoomTypeID, this.TotalSingleBeds , this.TotalDoubleBeds , this.Floor);
 
         }
 
@@ -76,10 +80,11 @@ namespace RoomsBusinessLayer
             int RoomTypeID = default;
             int TotalSingleBeds = default;
             int TotalDoubleBeds = default;
+            byte Floor = default;
 
 
-            if (clsRoomsDataAccess.GetRoomInfoByID(RoomID, ref Capacity, ref AllowChildern, ref fees, ref HotleID, ref RoomTypeID, ref TotalSingleBeds , ref TotalDoubleBeds ))
-                return new clsRoom(RoomID, Capacity, AllowChildern, fees, HotleID, RoomTypeID, TotalSingleBeds, TotalDoubleBeds);
+            if (clsRoomsDataAccess.GetRoomInfoByID(RoomID, ref Capacity, ref AllowChildern, ref fees, ref HotleID, ref RoomTypeID, ref TotalSingleBeds, ref TotalDoubleBeds, ref Floor))
+                return new clsRoom(RoomID, Capacity, AllowChildern, fees, HotleID, RoomTypeID, TotalSingleBeds , TotalDoubleBeds , Floor);
             else
                 return null;
 
@@ -116,6 +121,8 @@ namespace RoomsBusinessLayer
         }
 
         public static DataTable GetAllRooms() { return clsRoomsDataAccess.GetAllRooms(); }
+        
+        public static DataTable GetAvailableRooms() { return clsRoomsDataAccess.GetAllAvailableRooms(); }
 
         public static bool DeleteRoom(int RoomID) { return clsRoomsDataAccess.DeleteRoom(RoomID); }
 
