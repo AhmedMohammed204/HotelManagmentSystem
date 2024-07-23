@@ -1,4 +1,5 @@
 using IdentificationTypesBusinessLayer;
+using ReservationsBusinessLayer;
 using StegiHotel_databaseDataAccessLayer;
 using System;
 using System.Data;
@@ -123,7 +124,14 @@ namespace PeopleBusinessLayer
 
         public static bool isPersonExist(int PersonID) { return clsPeopleDataAccess.IsPersonExist(PersonID); }
 
-        
+        public clsReservation BookRoom(int RoomID, int CreatedByUserID, double PaidFees, DateTime StartDate, DateTime EndDate)
+        {
+            int ReservationID = clsReservationsDataAccess.Book(RoomID,this.PersonID, CreatedByUserID, PaidFees, StartDate, EndDate);
+            if (ReservationID == -1)
+                return null;
+
+            return clsReservation.Find(ReservationID);
+        }
     }
 
 }

@@ -221,6 +221,59 @@ namespace StegiHotel_databaseDataAccessLayer
             return dt;
         }
 
+        public static int Book(int RoomID, int PersonID, int CreatedByUserID, double PaidFees, DateTime StartDate, DateTime EndDate)
+        {
+            int ReservationID = -1;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("sp_BookRoom", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@RoomID", RoomID);
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+                        command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                        command.Parameters.AddWithValue("@PaidFees", PaidFees);
+                        command.Parameters.AddWithValue("@StartDay", StartDate);
+                        command.Parameters.AddWithValue("@EndDay", EndDate);
+
+                        SqlParameter outputIdParam = new SqlParameter("@ReservationID", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        command.Parameters.Add(outputIdParam);
+
+                        SqlParameter returnValue = new SqlParameter()
+                            {Direction = ParameterDirection.ReturnValue};
+                        command.Parameters.Add(returnValue);
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+
+                        int result = (int)returnValue.Value;
+
+                        if (result == 1)
+                        {
+                            ReservationID = (int)outputIdParam.Value;
+                        }
+                        else
+                        {
+                            throw new Exception("There was an error with adding new Reservation");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsErrorHandling.HandleError(ex);
+            }
+
+            return ReservationID;
+        }
 
     }
 
