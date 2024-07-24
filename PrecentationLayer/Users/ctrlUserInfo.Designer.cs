@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ctrlPersonInfo1 = new PrecentationLayer.Lib.ctrlPersonInfo();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.InfoIsActive = new PrecentationLayer.ctrlLabelInfo();
             this.InfoUsername = new PrecentationLayer.ctrlLabelInfo();
-            this.ctrlPersonInfo1 = new PrecentationLayer.Lib.ctrlPersonInfo();
+            this.btnUpdateUserInfo = new PrecentationLayer.PrimaryButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -48,8 +49,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Info";
             // 
+            // ctrlPersonInfo1
+            // 
+            this.ctrlPersonInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlPersonInfo1.Location = new System.Drawing.Point(3, 16);
+            this.ctrlPersonInfo1.Name = "ctrlPersonInfo1";
+            this.ctrlPersonInfo1.PersonInfo = null;
+            this.ctrlPersonInfo1.Size = new System.Drawing.Size(828, 272);
+            this.ctrlPersonInfo1.TabIndex = 0;
+            this.ctrlPersonInfo1.OnClickUpdate += new System.Action<int>(this.ctrlPersonInfo1_OnClickUpdate);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnUpdateUserInfo);
             this.groupBox2.Controls.Add(this.InfoIsActive);
             this.groupBox2.Controls.Add(this.InfoUsername);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -78,15 +90,19 @@
             this.InfoUsername.Size = new System.Drawing.Size(334, 28);
             this.InfoUsername.TabIndex = 0;
             // 
-            // ctrlPersonInfo1
+            // btnUpdateUserInfo
             // 
-            this.ctrlPersonInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrlPersonInfo1.Location = new System.Drawing.Point(3, 16);
-            this.ctrlPersonInfo1.Name = "ctrlPersonInfo1";
-            this.ctrlPersonInfo1.PersonInfo = null;
-            this.ctrlPersonInfo1.Size = new System.Drawing.Size(828, 272);
-            this.ctrlPersonInfo1.TabIndex = 0;
-            this.ctrlPersonInfo1.OnClickUpdate += new System.Action<int>(this.ctrlPersonInfo1_OnClickUpdate);
+            this.btnUpdateUserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUpdateUserInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnUpdateUserInfo.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateUserInfo.Location = new System.Drawing.Point(644, 29);
+            this.btnUpdateUserInfo.Name = "btnUpdateUserInfo";
+            this.btnUpdateUserInfo.Size = new System.Drawing.Size(140, 52);
+            this.btnUpdateUserInfo.TabIndex = 2;
+            this.btnUpdateUserInfo.Text = "Update";
+            this.btnUpdateUserInfo.UseVisualStyleBackColor = false;
+            this.btnUpdateUserInfo.Click += new System.EventHandler(this.btnUpdateUserInfo_Click);
             // 
             // ctrlUserInfo
             // 
@@ -109,5 +125,6 @@
         private ctrlLabelInfo InfoIsActive;
         private ctrlLabelInfo InfoUsername;
         private ctrlPersonInfo ctrlPersonInfo1;
+        private PrimaryButton btnUpdateUserInfo;
     }
 }

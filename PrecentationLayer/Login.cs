@@ -14,6 +14,9 @@ namespace PrecentationLayer
         {
             InitializeComponent();
             _ApplicationName = "StegiHotle";
+            btnClose.BackColor = clsColors.HevyYellow;
+            btnLogin.BackColor = clsColors.HevyYellow;
+
         }
         private void _LoadFromRegistries()
         {

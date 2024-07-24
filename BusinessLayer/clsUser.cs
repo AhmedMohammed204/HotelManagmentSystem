@@ -1,3 +1,4 @@
+using MyClassLibrary;
 using PeopleBusinessLayer;
 using StegiHotel_databaseDataAccessLayer;
 using System.Data;
@@ -44,8 +45,8 @@ namespace UsersBusinessLayer
         private bool _AddNewUser()
         {
             //call DataAccess Layer 
-
-            this.UserID = clsUsersDataAccess.AddNewUser(this.Username, this.Password, this.IsActive, this.PersonID);
+            
+            this.UserID = clsUsersDataAccess.AddNewUser(this.Username, clsHashing.Hash(this.Password), this.IsActive, this.PersonID);
 
             return (this.UserID != -1);
 
@@ -65,6 +66,21 @@ namespace UsersBusinessLayer
             string Password = default;
             bool IsActive = default;
             int PersonID = default;
+
+
+            if (clsUsersDataAccess.GetUserInfoByID(UserID, ref Username, ref Password, ref IsActive, ref PersonID))
+                return new clsUser(UserID, Username, Password, IsActive, PersonID);
+            else
+                return null;
+
+        }
+        
+        public static clsUser FindByPersonID(int PersonID)
+        {
+            string Username = default;
+            string Password = default;
+            bool IsActive = default;
+            int UserID = default;
 
 
             if (clsUsersDataAccess.GetUserInfoByID(UserID, ref Username, ref Password, ref IsActive, ref PersonID))
@@ -124,6 +140,8 @@ namespace UsersBusinessLayer
         public static bool DeleteUser(int UserID) { return clsUsersDataAccess.DeleteUser(UserID); }
 
         public static bool isUserExist(int UserID) { return clsUsersDataAccess.IsUserExist(UserID); }
+        
+        public static bool isUserExistByPersonID(int PersonID) { return clsUsersDataAccess.IsUserExistByPersonID(PersonID); }
 
         public static bool IsAbleToLogin(string Username, string Password)
         {

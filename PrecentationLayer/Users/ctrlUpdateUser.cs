@@ -19,6 +19,7 @@ namespace PrecentationLayer.Users
         {
             InitializeComponent();
             ctrlUserInfo1.PersonInfo.UpdateButton.Visible = false;
+            ctrlUserInfo1.btnUpdateUser.Visible = false;
         }
         public void LoadUser(int UserID)
         {
@@ -55,7 +56,7 @@ namespace PrecentationLayer.Users
             if (!_IsValidToSave())
                 return;
             ctrlUserInfo1.UserInfo.Username = txtUsername.Details;
-            ctrlUserInfo1.UserInfo.Password = clsHashing.Hash( txtPassword.Details);
+            ctrlUserInfo1.UserInfo.Password =  txtPassword.Details;
             if(!ctrlUserInfo1.UserInfo.Save())
             {
                 clsMessageBox.ErrorMessage("There was an error");

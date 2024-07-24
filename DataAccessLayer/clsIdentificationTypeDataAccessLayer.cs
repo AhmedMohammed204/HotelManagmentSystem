@@ -204,7 +204,7 @@ namespace StegiHotel_databaseDataAccessLayer
 
         }
 
-        public static async Task<DataTable> GetAllIdentificationTypesAsync()
+        public static DataTable GetAllIdentificationTypes()
         {
 
             DataTable dt = new DataTable();
@@ -216,8 +216,8 @@ namespace StegiHotel_databaseDataAccessLayer
                     string query = "SELECT * FROM IdentificationTypes";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        await connection.OpenAsync();
-                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();

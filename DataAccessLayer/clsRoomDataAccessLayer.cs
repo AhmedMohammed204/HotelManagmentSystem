@@ -268,6 +268,34 @@ namespace StegiHotel_databaseDataAccessLayer
             catch (Exception ex) { clsErrorHandling.HandleError(ex); }
 
             return dt;
+        }   
+        public static int GetAllAvailableRoom(int Capacity, bool AllowChildren)
+        {
+
+            int RoomID = -1;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("sp_AvailableRoom", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@Capacity", Capacity);
+                        command.Parameters.AddWithValue("@AllowChildren", AllowChildren);
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int RoomFoundID))
+                        {
+                            RoomID = RoomFoundID;
+                        }
+                    }
+                }
+            }
+
+            catch (Exception ex) { clsErrorHandling.HandleError(ex); }
+
+            return RoomID;
         }
 
 

@@ -14,6 +14,22 @@ namespace PrecentationLayer.Lib
         string _Info { get; set; }
         string _Details { get; set; }
 
+        bool _HideCharacters { get; set; }
+        public bool HideCharacters
+        {
+            get
+            {
+                return _HideCharacters;
+            }
+            set
+            {
+                _HideCharacters = value;
+                if(_HideCharacters)
+                    txtDetails.Mode = PrimaryTextBox.enMode.Hide;
+                else
+                    txtDetails.Mode = PrimaryTextBox.enMode.Show;
+            }
+        }
 
         public string Details
         {

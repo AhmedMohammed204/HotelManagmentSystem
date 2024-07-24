@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using RoomTypesBusinessLayer;
 using StegiHotel_databaseDataAccessLayer;
 namespace RoomsBusinessLayer
 {
@@ -18,6 +19,7 @@ namespace RoomsBusinessLayer
         public int? TotalDoubleBeds { get; set; }
         public byte Floor { get; set; }
 
+        public clsRoomType RoomType { get; set; }
 
         public clsRoom()
         {
@@ -47,7 +49,7 @@ namespace RoomsBusinessLayer
             this.TotalSingleBeds = TotalSingleBeds;
             this.TotalDoubleBeds = TotalDoubleBeds;
             this.Floor = Floor;
-
+            RoomType = clsRoomType.Find(RoomTypeID);    
 
             Mode = enMode.Update;
 
@@ -128,6 +130,14 @@ namespace RoomsBusinessLayer
 
         public static bool isRoomExist(int RoomID) { return clsRoomsDataAccess.IsRoomExist(RoomID); }
 
+        public static clsRoom GetAvailableRoom(int Capacity, bool AllowChildren)
+        {
+            int RoomID = clsRoomsDataAccess.GetAllAvailableRoom(Capacity, AllowChildren);
+            if (RoomID == -1)
+                return null;
+
+            return clsRoom.Find(RoomID);
+        }
 
     }
 

@@ -33,8 +33,9 @@
             // 
             // ctrlUpdateUser1
             // 
-            this.ctrlUpdateUser1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ctrlUpdateUser1.Location = new System.Drawing.Point(0, 198);
+            this.ctrlUpdateUser1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlUpdateUser1.Location = new System.Drawing.Point(12, 108);
             this.ctrlUpdateUser1.Name = "ctrlUpdateUser1";
             this.ctrlUpdateUser1.Size = new System.Drawing.Size(1360, 394);
             this.ctrlUpdateUser1.TabIndex = 3;
@@ -46,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(1360, 592);
             this.Controls.Add(this.ctrlUpdateUser1);
             this.Name = "frmUpdateUser";
+            this.Padding = new System.Windows.Forms.Padding(30);
             this.Text = "frmUpdateUser";
             this.Controls.SetChildIndex(this.ctrlUpdateUser1, 0);
             this.ResumeLayout(false);

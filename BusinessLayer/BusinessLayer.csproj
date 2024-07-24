@@ -62,6 +62,10 @@
       <Project>{30619015-a320-4c19-ad76-6162b8c7fb7b}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UtilLibrary\UtilLibrary.csproj">
+      <Project>{dc6c140d-3874-452b-9593-a70f525de7a1}</Project>
+      <Name>UtilLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

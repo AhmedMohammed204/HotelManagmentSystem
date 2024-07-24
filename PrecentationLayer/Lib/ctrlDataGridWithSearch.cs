@@ -27,6 +27,8 @@ namespace PrecentationLayer.Lib
             {
                 cbFillters.Items.Add(Column.ColumnName);
             }
+            if(cbFillters.Items.Count > 0)
+                cbFillters.SelectedIndex = 0;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

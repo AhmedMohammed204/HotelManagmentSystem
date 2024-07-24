@@ -1,4 +1,5 @@
 ﻿using PrecentationLayer.Screens;
+using System.Threading.Tasks;
 
 namespace PrecentationLayer.People
 {
@@ -7,7 +8,7 @@ namespace PrecentationLayer.People
         public frmAddUpdatePerson(int PersonID)
         {
             InitializeComponent();
-            ctrlUpdatePersonInfo1.LoadInfo(PersonID);
+             ctrlUpdatePersonInfo1.LoadInfo(PersonID);
         }
 
         private void ctrlUpdatePersonInfo1_OnModeChanged(string obj)

@@ -8,11 +8,10 @@ namespace PrecentationLayer.Screens
         {
             InitializeComponent();
         }
-        public event clsGlobal.BackHandler OnBack;
-        protected void btnBack_Click(object sender, EventArgs e)
+        public event clsGlobal.BackHandler OnClose;
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            OnBack?.Invoke();
+            OnClose?.Invoke();
         }
-
     }
 }

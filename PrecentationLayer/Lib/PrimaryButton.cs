@@ -4,17 +4,16 @@ using System.Windows.Forms;
 
 namespace PrecentationLayer
 {
-    public partial class PrimaryButton : Guna2Button
+    public partial class PrimaryButton : Button
     {
         public PrimaryButton()
         {
             InitializeComponent();
-            this.BackColor = Color.Transparent;
-            this.FillColor = clsColors.Gold;
+            this.BackColor = clsColors.Gold;
             this.ForeColor = Color.Black;
             this.Font = clsFont.MainFont;
             this.Size = new Size(140, 52);
-            this.BorderRadius = 10;
+            this.FlatStyle = FlatStyle.Flat;
         }
 
         protected override void OnPaint(PaintEventArgs pe)

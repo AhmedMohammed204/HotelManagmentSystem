@@ -50,6 +50,48 @@ namespace StegiHotel_databaseDataAccessLayer
 
         }
 
+        public static bool GetUserInfoByPersonID(ref int UserID, ref string Username, ref string Password, ref bool IsActive, ref int PersonID)
+        {
+            bool isFound = false;
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM Users WHERE PersonID = @PersonID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                UserID = (int)reader["UserID"];
+                                Username = (string)reader["Username"];
+                                Password = (string)reader["Password"];
+                                IsActive = (bool)reader["IsActive"];
+                                PersonID = (int)reader["PersonID"];
+
+                            }
+                            else
+                            {
+                                isFound = false;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { clsErrorHandling.HandleError(ex); }
+            return isFound;
+
+        }
+
 
         public static bool GetUserInfoByUsername(ref int UserID, ref string Username, ref string Password, ref bool IsActive, ref int PersonID)
         {
@@ -216,6 +258,33 @@ namespace StegiHotel_databaseDataAccessLayer
                     {
 
                         command.Parameters.AddWithValue("@UserID", UserID);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            isFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { clsErrorHandling.HandleError(ex); }
+
+            return isFound;
+
+        }
+        
+        public static bool IsUserExistByPersonID(int PersonID)
+        {
+            bool isFound = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT Found=1 FROM Users WHERE PersonID = @PersonID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
 
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())

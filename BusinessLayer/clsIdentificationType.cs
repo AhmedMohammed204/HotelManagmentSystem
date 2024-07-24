@@ -104,7 +104,7 @@ namespace IdentificationTypesBusinessLayer
             return false;
         }
 
-        public static async Task<DataTable> GetAllIdentificationTypesAsync() { return await clsIdentificationTypesDataAccess.GetAllIdentificationTypesAsync(); }
+        public static DataTable GetAllIdentificationTypes() { return clsIdentificationTypesDataAccess.GetAllIdentificationTypes(); }
 
         public static bool DeleteIdentificationType(int IdentificationTypeID) { return clsIdentificationTypesDataAccess.DeleteIdentificationType(IdentificationTypeID); }
 

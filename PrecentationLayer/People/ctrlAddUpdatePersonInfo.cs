@@ -19,10 +19,10 @@ namespace PrecentationLayer.People
             InitializeComponent();
         }
         public clsPerson PersonInfo { get; set; }
-        public async Task LoadInfo(int PersonID)
+        public void LoadInfo(int PersonID)
         {
             dtpDateOfBirth.MaxDate = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
-            Task loadType = LoadIdTypeAsync();
+            LoadIdTypeAsync();
             if (PersonID == -1)
             {
                 PersonInfo = new clsPerson();
@@ -38,15 +38,14 @@ namespace PrecentationLayer.People
             }
             Mode = enMode.Update;
             OnModeChanged?.Invoke("Update Person");
-            await loadType;
             FillPersonDetails();
 
         }
 
-        async Task LoadIdTypeAsync()
+        void LoadIdTypeAsync()
         {
             cbIdType.Items.Clear();
-            DataTable IdTypes = await clsIdentificationType.GetAllIdentificationTypesAsync();
+            DataTable IdTypes = clsIdentificationType.GetAllIdentificationTypes();
 
             foreach (DataRow Type in IdTypes.Rows)
             {

@@ -41,6 +41,7 @@
             this.ctrlUserInfo1.TabIndex = 3;
             this.ctrlUserInfo1.UserInfo = null;
             this.ctrlUserInfo1.OnClickUpdate += new System.Action<int>(this.ctrlUserInfo1_OnClickUpdate);
+            this.ctrlUserInfo1.OnClickUpdateUserInfo += new System.Action<int>(this.ctrlUserInfo1_OnClickUpdateUserInfo);
             // 
             // frmUserInfo
             // 

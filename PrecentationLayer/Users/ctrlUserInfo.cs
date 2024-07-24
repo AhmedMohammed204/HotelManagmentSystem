@@ -11,9 +11,11 @@ namespace PrecentationLayer.Lib
         {
             InitializeComponent();
             PersonInfo = ctrlPersonInfo1;
+            btnUpdateUser = btnUpdateUserInfo;
         }
         public clsUser UserInfo { get; set; }
         public ctrlPersonInfo PersonInfo { get; set; }
+        public Button btnUpdateUser { get; set; }
         public bool LoadInfo(int UserID)
         {
             UserInfo = clsUser.Find(UserID);
@@ -35,9 +37,15 @@ namespace PrecentationLayer.Lib
 
         }
         public event Action<int> OnClickUpdate;
+        public event Action<int> OnClickUpdateUserInfo;
         private void ctrlPersonInfo1_OnClickUpdate(int obj)
         {
             OnClickUpdate?.Invoke(obj);
+        }
+
+        private void btnUpdateUserInfo_Click(object sender, EventArgs e)
+        {
+            OnClickUpdateUserInfo?.Invoke(UserInfo.UserID);
         }
     }
 }

@@ -73,6 +73,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsGlobal.cs" />
+    <Compile Include="Lib\clsOpenSubForm.cs" />
+    <Compile Include="People\frmPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmPersonInfo.Designer.cs">
+      <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\frmReservationInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\frmReservationInfo.Designer.cs">
+      <DependentUpon>frmReservationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms\ctrlGetAvailableRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rooms\ctrlGetAvailableRoom.Designer.cs">
+      <DependentUpon>ctrlGetAvailableRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +134,12 @@
     <Compile Include="People\ctrlAddUpdatePersonInfo.Designer.cs">
       <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="People\ctrlPersonInfoWithFilters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\ctrlPersonInfoWithFilters.Designer.cs">
+      <DependentUpon>ctrlPersonInfoWithFilters.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\frmAddUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +151,48 @@
     </Compile>
     <Compile Include="People\frmManagePeople.Designer.cs">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\ctrlAddUpdateReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reservations\ctrlAddUpdateReservation.Designer.cs">
+      <DependentUpon>ctrlAddUpdateReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\ctrlReservationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reservations\ctrlReservationInfo.Designer.cs">
+      <DependentUpon>ctrlReservationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\frmAddUpdateReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\frmAddUpdateReservation.Designer.cs">
+      <DependentUpon>frmAddUpdateReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\frmManageReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\frmManageReservations.Designer.cs">
+      <DependentUpon>frmManageReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms\ctrlRoomInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rooms\ctrlRoomInfo.Designer.cs">
+      <DependentUpon>ctrlRoomInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms\frmRoomInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms\frmRoomInfo.Designer.cs">
+      <DependentUpon>frmRoomInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ShowDataScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\ShowDataScreen.Designer.cs">
+      <DependentUpon>ShowDataScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\ctrlUpdateUser.cs">
       <SubType>UserControl</SubType>
@@ -185,6 +252,18 @@
     <Compile Include="Screens\TitledScreen.Designer.cs">
       <DependentUpon>TitledScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\frmAddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAddNewUser.Designer.cs">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmManageUsers.Designer.cs">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\frmUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +276,15 @@
     <Compile Include="Users\frmUserInfo.Designer.cs">
       <DependentUpon>frmUserInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="People\frmPersonInfo.resx">
+      <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\frmReservationInfo.resx">
+      <DependentUpon>frmReservationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\ctrlGetAvailableRoom.resx">
+      <DependentUpon>ctrlGetAvailableRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,11 +306,35 @@
     <EmbeddedResource Include="People\ctrlAddUpdatePersonInfo.resx">
       <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="People\ctrlPersonInfoWithFilters.resx">
+      <DependentUpon>ctrlPersonInfoWithFilters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="People\frmAddUpdatePerson.resx">
       <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\ctrlAddUpdateReservation.resx">
+      <DependentUpon>ctrlAddUpdateReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\ctrlReservationInfo.resx">
+      <DependentUpon>ctrlReservationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\frmAddUpdateReservation.resx">
+      <DependentUpon>frmAddUpdateReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\frmManageReservations.resx">
+      <DependentUpon>frmManageReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\ctrlRoomInfo.resx">
+      <DependentUpon>ctrlRoomInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\frmRoomInfo.resx">
+      <DependentUpon>frmRoomInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ShowDataScreen.resx">
+      <DependentUpon>ShowDataScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\ctrlUpdateUser.resx">
       <DependentUpon>ctrlUpdateUser.cs</DependentUpon>
@@ -254,6 +366,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\TitledScreen.resx">
       <DependentUpon>TitledScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAddNewUser.resx">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmManageUsers.resx">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frmUpdateUser.resx">
       <DependentUpon>frmUpdateUser.cs</DependentUpon>

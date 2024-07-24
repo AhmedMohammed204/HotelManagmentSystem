@@ -13,18 +13,18 @@ namespace PrecentationLayer.Lib
             InitializeComponent();
             UpdateButton = btnUpdate;
         }
-        public Guna2Button UpdateButton { get; set; }
+        public Button UpdateButton { get; set; }
         public clsPerson PersonInfo { get; set; }
-        public void LoadInfo(int PersonID)
+        public bool LoadInfo(int PersonID)
         {
             PersonInfo = clsPerson.Find(PersonID);
             if (PersonInfo == null)
             {
                 clsMessageBox.ErrorMessage("Person not found");
-                return;
+                return false;
             }
             _FillPersonDetails();
-
+            return true;
         }
         void _FillPersonDetails()
         {
